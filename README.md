@@ -6,8 +6,8 @@
 	```
 	pip install numpy
 	pip install nltk
+	python nltk_dependency.py
 	```
-
 2) Run using python (main.py contains unit tests)
 	```
 	python main.py
@@ -34,7 +34,7 @@ print(ci.getEmailAddress()) #john.doe@entegrasystems.com
 ```
 
 #### Name:
-The name extraction is done using nltk. Each line in the given string is split into chunks. Each chunk labeled as a 'PERSON' is stored in a list of people. Then, we iterate through each line to tally points. For each people entry contained in the line, that line gains a point.
+The name extraction is done using nltk (https://www.nltk.org/). Each line in the given string is split into chunks. Each chunk labeled as a 'PERSON' is stored in a list of people. Then, we iterate through each line to tally points. For each people entry contained in the line, that line gains a point.
 Example:
 ```
 people=['John','Doe','Software']
@@ -45,7 +45,7 @@ Senior Software Engineer => 1 point (one for 'Software')
 The line with the most points is returned as the name. If all the lines have 0 points, then an empty string will be returned instead.
 
 #### Phone Number:
-The phone number extraction handles many cases, including:
+The phone number extraction handles many formats, including:
 * 4105551234
 * (410)5551234
 * (410)555-1234
