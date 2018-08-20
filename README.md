@@ -21,16 +21,16 @@ The BusinessCardParser extracts ContactInfo (name, phone number, email address) 
 ```
 from BusinessCardParser import BusinessCardParser
 
-businessCardInfo = "Entegra Systems
+businessCardInfo = """Entegra Systems
 John Doe
 Senior Software Engineer
 (410)555-1234
-john.doe@entegrasystems.com"
+john.doe@entegrasystems.com"""
 
 ci = BusinessCardParser.getContactInfo(businessCardInfo) 
-ci.getName() #John Doe
-ci.getPhoneNumber() #4105551234
-ci.getEmail() #john.doe@entegrasystems.com
+print(ci.getName()) #John Doe
+print(ci.getPhoneNumber()) #4105551234
+print(ci.getEmailAddress()) #john.doe@entegrasystems.com
 ```
 
 #### Name:
@@ -63,8 +63,8 @@ The extraction is done using a regular expression:
 * 0-3 non-digits: hypen or space/hypen/space
 * 4 digits: last four digits of the phone number
 
-If no phone number is found, then the phone number will be an empty string
+If no phone number is found, then the phone number will be an empty string.
 
 #### Email Address:
-The email address is extracted by taking the first line that contains an '@' symbol
-If no '@' symbol is found, then the email address will be an empty string
+The email address is extracted by taking the first line that contains an '@' symbol.
+If no '@' symbol is found, then the email address will be an empty string.
