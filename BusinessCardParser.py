@@ -1,5 +1,6 @@
 from ContactInfo import ContactInfo
 import re
+import numpy
 import nltk
 
 class BusinessCardParser:
@@ -10,8 +11,8 @@ class BusinessCardParser:
 		textList = [line for line in text.splitlines()]
 		#add every chunk with a person label to the 'people' list
 		people = []
-		for sent in textList:
-			for chunk in nltk.ne_chunk(nltk.pos_tag(nltk.word_tokenize(sent))):
+		for line in textList:
+			for chunk in nltk.ne_chunk(nltk.pos_tag(nltk.word_tokenize(line))):
 				if hasattr(chunk, 'label') and chunk.label() == 'PERSON':
 					people.append(chunk[0][0])
 		#tally points for each line
